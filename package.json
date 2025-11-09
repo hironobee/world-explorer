@@ -1,0 +1,14 @@
+{
+  "name": "world-explorer",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": ["electron", "travel", "restcountries", "oop"],
+  "author": "adreana",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^39.0.0"
+  }
+}

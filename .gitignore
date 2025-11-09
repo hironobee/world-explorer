@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Electron build cache
+dist/
+out/
+build/
+
+# System files
+.DS_Store
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

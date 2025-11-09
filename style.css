@@ -1,0 +1,467 @@
+/* =========================================
+   World Explorer - Vintage Explorer Theme
+   ========================================= */
+
+:root {
+    --bg: #f8f4e3;
+    --card: #f0e6d2;
+    --primary: #7b5e3b;
+    --accent: #d4af37;
+    --text: #3b2f2f;
+    --muted: #6e6254;
+    --shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    --radius: 14px;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Merriweather", "Georgia", serif;
+}
+
+body {
+    margin: 0;
+    color: var(--text);
+    font-family: "Merriweather", "Georgia", serif;
+}
+
+/* Page-specific Backgrounds */
+body.search-page {
+    background: var(--bg) url('assets/bg-search.jpg') no-repeat center center fixed;
+    background-size: 100% 100%;
+    position: relative;
+}
+
+body.itinerary-page {
+    background: var(--bg) url('assets/bg-itinerary.jpg') no-repeat center center fixed;
+    background-size: 100% 100%;
+    position: relative;
+    font-family: "Merriweather", "Georgia", serif;
+    color: #3a2a1a;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(90deg, var(--primary), #5c4228);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 28px;
+    box-shadow: var(--shadow);
+    border-bottom: 3px solid var(--accent);
+}
+
+.brand {
+    font-weight: 700;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: 1px;
+}
+
+.brand::before {
+    content: "🧭";
+    font-size: 20px;
+}
+
+.nav-links a {
+    color: rgba(255,255,255,0.95);
+    text-decoration: none;
+    margin-left: 14px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: all 0.3s;
+    font-family: "Poppins", sans-serif;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff6da;
+}
+
+.search-box input:focus {
+    outline: 2px solid var(--accent);
+}
+
+/* Flag */
+.flag-area {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.flag {
+    width: 180px;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    animation: fadeIn 0.8s ease;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Country Details */
+.meta h2 {
+    font-family: "Merriweather", "Georgia", serif;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+.meta a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.meta a:hover {
+    text-decoration: underline;
+}
+
+/* Button section */
+.button-row {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.saveItBtn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.saveItBtn:hover {
+    background: #5a3d24;
+}
+
+/* ==============================
+    ITINERARY PAGE
+   ============================== */
+
+/* Main Itinerary Container */
+.itinerary-panel {
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(8px);
+    border-radius: 22px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    width: 80%;
+    max-width: 900px;
+    padding: 40px 50px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+/* Title */
+.itinerary-panel h1 {
+    font-family: "Merriweather", serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #4b2f16;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #d4af37;
+    display: inline-block;
+    padding-bottom: 6px;
+}
+
+/* Form layout */
+.form-inline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.form-inline input {
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1.5px solid #d4af37;
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+    background: #fffaf0;
+    color: #3a2a1a;
+}
+
+.form-inline input[type="text"] {
+    width: 200px;
+}
+
+.form-inline input[type="date"] {
+    width: 160px;
+}
+
+.form-inline button {
+    background: #d9b887;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 18px;
+    font-weight: 600;
+    color: #3a2a1a;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-inline button:hover {
+    background: #c6a96d;
+}
+
+/* Feedback message */
+.feedback {
+    margin-bottom: 15px;
+    color: #5a3d24;
+    font-weight: 600;
+}
+
+/* List layout */
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 10px;
+}
+
+/* Individual itinerary card */
+.it-card {
+    background: rgba(255, 244, 230, 0.92);
+    border-radius: 14px;
+    padding: 18px 20px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.it-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Country and date */
+.it-card strong {
+    font-family: "Merriweather", serif;
+    font-size: 1.1rem;
+    color: #4b2f16;
+}
+
+/* Notes text */
+.it-card p {
+    margin: 4px 0;
+    text-align: justify;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    color: #3a2a1a;
+}
+
+/* Action buttons */
+.it-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.it-actions button {
+    border: none;
+    border-radius: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.9rem;
+}
+
+.it-actions .edit {
+    background: #c6a96d;
+}
+
+.it-actions .edit:hover {
+    background: #b89050;
+}
+
+.it-actions .delete {
+    background: #b94a48;
+}
+
+.it-actions .delete:hover {
+    background: #993a37;
+}
+
+/* Smooth fade animation */
+.it-card {
+    animation: fadeIn 0.8s ease;
+}
+
+/* ==============================
+    SEARCH / MAIN PAGE
+   ============================== */
+
+body.search-page {
+    background: var(--bg) url('assets/bg-search.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: "Merriweather", "Georgia", serif;
+    color: #3a2a1a;
+}
+
+/* Main centered layout */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 50px 0;
+}
+
+/* Frosted white panel */
+.result-panel {
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(8px);
+    border-radius: 22px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.25);
+    width: 80%;
+    max-width: 900px;
+    padding: 40px 50px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Header */
+.search-panel h1 {
+    font-family: "Merriweather", serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #4b2f16;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #d4af37;
+    display: inline-block;
+    padding-bottom: 6px;
+}
+
+/* Search bar */
+.search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1.5px solid #d4af37;
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+    background: #fffaf0;
+    color: #3a2a1a;
+    width: 260px;
+}
+
+.search-box input:focus {
+    outline: 2px solid #d4af37;
+}
+
+.search-box button {
+    background: #d9b887;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 18px;
+    font-weight: 600;
+    color: #3a2a1a;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-box button:hover {
+    background: #c6a96d;
+}
+
+/* Hint text */
+.hint {
+    color: #5a3d24;
+    font-size: 1rem;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* Flag + Result styling */
+.result-card {
+    background: rgba(255, 244, 230, 0.92);
+    border-radius: 14px;
+    padding: 25px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.15);
+    text-align: center;
+    margin-top: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.result-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 12px rgba(0,0,0,0.25);
+}
+
+.flag-area {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.flag {
+    width: 180px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+/* Country name */
+.meta h2 {
+    font-family: "Merriweather", serif;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #4b2f16;
+}
+
+/* Country details */
+.meta p {
+    text-align: justify;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    color: #3a2a1a;
+    margin: 4px 0;
+}
+
+/* Save button */
+.button-row {
+    margin-top: 18px;
+    display: flex;
+    justify-content: center;
+}
+
+.saveItBtn {
+    background: #d9b887;
+    color: #3a2a1a;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.saveItBtn:hover {
+    background: #c6a96d;
+}

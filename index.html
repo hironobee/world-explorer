@@ -1,0 +1,38 @@
+<!-- Search page -->
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>World Explorer - Search</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body class="search-page">
+        <nav class="navbar">
+            <div class="brand">🌍 World Explorer</div>
+            <div class="nav-links">
+                <a href="index.html" class="active">Search</a>
+                <a href="itinerary.html">My Itinerary</a>
+            </div>
+        </nav>
+
+        <main class="container">
+            <section class="search-panel">
+                <h1>Search Country</h1>
+                <div class="search-box">
+                    <input id="countryInput" placeholder="Enter country name (e.g Japan)" />
+                    <button id="searchBtn">Search</button>
+                </div>
+                <div id="searchFeedback" class="feedback"></div>
+            </section>
+
+            <section id="result" class="result-panel">
+                <!--Filled Dynamically-->
+                <p class="hint">Search for a country to see details here.</p>
+            </section>
+        </main>
+
+        <script src="renderer.js"></script>
+    </body>
+</html>

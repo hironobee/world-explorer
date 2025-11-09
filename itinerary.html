@@ -1,0 +1,42 @@
+<!-- Itinerary Page -->
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>World Explorer - Itinerary</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body class="itinerary-page">
+        <nav class="navbar">
+            <div class="brand">🌍 World Explorer</div>
+            <div class="nav-links">
+                <a href="index.html">Search</a>
+                <a href="itinerary.html" class="active">My Itinerary</a>
+            </div>
+        </nav>
+
+        <main class="container">
+            <section class="itinerary-panel">
+                <h1>My Itineraries & Journal</h1>
+
+                <form id="itineraryForm" class="form-inline">
+                    <input id="itCountry" placeholder="Country name" required/>
+                    <input id="itDate" type="date"/>
+                    <input id="itNotes" placeholder="Notes (optional)"/>
+                    <button type="submit">Add / Save</button>
+                    <button type="button" id="clearBtn">Clear Form</button>
+                </form>
+
+                <div id="itFeedback" class="feedback"></div>
+
+                <div id="itList" class="list">
+                    <!-- List of itineraries appears here -->
+                </div>
+            </section>
+        </main>
+
+        <script src="renderer.js"></script>
+    </body>
+</html>
