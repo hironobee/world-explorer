@@ -27,3 +27,9 @@ world-explorer/
 └── assets/
     ├── bg-search.jpg
     ├── bg-itinerary.jpg
+
+## 📸 Screenshots
+
+| Search Page | Itinerary Page |
+|--------------|----------------|
+| ![Search Page Screenshot](assets/search-page.png) | ![Itinerary Page Screenshot](assets/itinerary-page.png) |
